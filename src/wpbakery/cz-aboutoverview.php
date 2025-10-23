@@ -220,7 +220,7 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                         $icon_url = $val['mg_icon'] ? wp_get_attachment_image_url(intval($val['mg_icon']), 'full') : '';
                         ?>
                         <div class="col-12 col-lg-3">
-                            <div class="d-flex flex-row">
+                            <div class="d-flex flex-row align-items-start">
                                 <img src='<?php echo $icon_url; ?>' style="width: 40px; height: 'auto';" alt=''>
 
                                 <div class="stat">
