@@ -50,55 +50,59 @@ function socialmenu_register_options_submenu_appearance_menu2()
 		foreach ($languages as $value) {
 			$cmb->add_field(array(
 				'name' => __('Contact /'.$value, 'cmb2'),
-				'id' => 'contact_address_'.$value,
+				'id' => 'address'.$value,
+				'type' => 'textarea'
+			));
+		}
+		foreach ($languages as $value) {
+			$cmb->add_field(array(
+				'name' => __('Contact form shortcode /'.$value, 'cmb2'),
+				'id' => 'contact_form_'.$value,
+				'type' => 'text'
+			));
+		}
+
+		foreach ($languages as $value) {
+			$cmb->add_field(array(
+				'name' => __('Footer text /'.$value, 'cmb2'),
+				'id' => 'footer_text_'.$value,
 				'type' => 'textarea'
 			));
 		}
 
 		foreach ($languages as $value) {
 			$cmb->add_field(array(
-				'name' => __('Search page url /'.$value, 'cmb2'),
-				'id' => 'search_url_'.$value,
+				'name' => __('Borchur pdf link /'.$value, 'cmb2'),
+				'id' => 'brochure_link_'.$value,
 				'type' => 'text_url'
 			));
 		}
-		foreach ($languages as $value) {
-			$cmb->add_field(array(
-				'name' => __('Login page url /'.$value, 'cmb2'),
-				'id' => 'login_url_'.$value,
-				'type' => 'text_url'
-			));
-		}
+
 	}
 
 
 
-
+	$cmb->add_field(array(
+		'name' => __('Contact email', 'cmb2'),
+		'id' => 'contact_email',
+		'type' => 'text'
+	));
+	$cmb->add_field(array(
+		'name' => __('Contact phone', 'cmb2'),
+		'id' => 'contact_phone',
+		'type' => 'text'
+	));
 	$cmb->add_field(array(
 		'name' => __('Facebook Url', 'cmb2'),
-		'id' => 'social_facebook_url',
-		'type' => 'text_url'
-	));
-	$cmb->add_field(array(
-		'name' => __('Twitter Url', 'cmb2'),
-		'id' => 'social_twitter_url',
-		'type' => 'text_url'
-	));
-	$cmb->add_field(array(
-		'name' => __('Linkedin Url', 'cmb2'),
-		'id' => 'social_linkedin_url',
+		'id' => 'facebook_url',
 		'type' => 'text_url'
 	));
 	$cmb->add_field(array(
 		'name' => __('Instagram Url', 'cmb2'),
-		'id' => 'social_instagram_url',
+		'id' => 'instagram_url',
 		'type' => 'text_url'
 	));
-	$cmb->add_field(array(
-		'name' => __('Youtube Url', 'cmb2'),
-		'id' => 'social_youtube_url',
-		'type' => 'text_url'
-	));
+	
 
 
 

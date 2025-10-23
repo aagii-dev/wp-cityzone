@@ -1,1 +1,1 @@
-# wp-burenscore
+# wp-cityzone
