@@ -74,7 +74,7 @@ $bodyCls = "";
 	<div id="menu">
 		<!-- LEFT RAIL -->
 		<aside class="rail">
-			<a href="index.html" class="brand">
+			<a href="<?php echo pll_home_url();?>" class="brand">
 				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.svg" alt="City Zone" />
 			</a>
 			<button class="menu-btn" id="menuBtn" aria-label="Меню">
