@@ -21,11 +21,11 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                 'params' => [
 
                 // ---------- Ерөнхий ----------
-                [
-                    'type'        => 'attach_image',
-                    'heading'     => __('Background image', 'text-domain'),
-                    'param_name'  => 'mg_background',
-                ],
+                // [
+                //     'type'        => 'attach_image',
+                //     'heading'     => __('Background image', 'text-domain'),
+                //     'param_name'  => 'mg_background',
+                // ],
                 [
                     'type'        => 'textfield',
                     'heading'     => __('Section title (Жижиг гарчиг)', 'text-domain'),
@@ -76,6 +76,11 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                     'param_name'  => 'mg_stats',
                     
                     'params'      => [
+                         [
+                            'type'        => 'attach_image',
+                            'heading'     => __('Icon', 'text-domain'),
+                            'param_name'  => 'mg_icon',
+                        ],
                     [
                         'type'       => 'textfield',
                         'heading'    => __('Number', 'text-domain'),
@@ -211,18 +216,12 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                 <div class="stat-wrap">
                     <div class="row g-2 g-md-0">
                     <?php foreach ($mg_stats as $val) { ?>
-                        
+                        <?php
+                        $icon_url = $val['mg_icon'] ? wp_get_attachment_image_url(intval($val['mg_icon']), 'full') : '';
+                        ?>
                         <div class="col-12 col-lg-3">
                             <div class="d-flex flex-row">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                    d="M5 20H35M20 5V35M13 5H27C29.8003 5 31.2004 5 32.27 5.54497C33.2108 6.02433 33.9757 6.78924 34.455 7.73005C35 8.79961 35 10.1997 35 13V27C35 29.8003 35 31.2004 34.455 32.27C33.9757 33.2108 33.2108 33.9757 32.27 34.455C31.2004 35 29.8003 35 27 35H13C10.1997 35 8.79961 35 7.73005 34.455C6.78924 33.9757 6.02433 33.2108 5.54497 32.27C5 31.2004 5 29.8003 5 27V13C5 10.1997 5 8.79961 5.54497 7.73005C6.02433 6.78924 6.78924 6.02433 7.73005 5.54497C8.79961 5 10.1997 5 13 5Z"
-                                    stroke="#FF6633"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    />
-                                </svg>
+                                <img src='<?php echo $icon_url; ?>' style="width: 40px; height: 'auto';" alt=''>
 
                                 <div class="stat">
                                     <div class="stat-number"><?php echo $val['stat_number']; ?></div>
