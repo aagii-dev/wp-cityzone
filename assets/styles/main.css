@@ -1351,7 +1351,8 @@ footer {
   color: #000;
 }
 
-.col-left .desc {
+.col-left .desc ,
+.col-left .desc p{
   font-size: clamp(18px, 1.5vw, 24px);
   font-weight: 500;
   line-height: 1.4;

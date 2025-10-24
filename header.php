@@ -91,7 +91,7 @@ $bodyCls = "";
 						wp_nav_menu([
 							'theme_location' => 'main_menu',
 							'container'      => "nav",
-							'container_class'      => "menu-links mb-5",
+							'container_class'      => "menu-links mb-5 text-uppercase",
 							'items_wrap'     => '%3$s', // <ul> бүрхүүл гаргахгүй
 							'walker'         => new Main_Nav_Walker(),
 						]);
