@@ -35,13 +35,13 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
 
                 // ---------- Текст блокwp ----------
                 [
-                    'type'        => 'textarea_raw_html',
+                    'type'        => 'textarea',
                     'heading'     => __('Paragraph #1', 'text-domain'),
                     'param_name'  => 'mg_desc1',
                     'value'       => '',
                 ],
                 [
-                    'type'        => 'textarea_raw_html',
+                    'type'        => 'textarea',
                     'heading'     => __('Paragraph #2', 'text-domain'),
                     'param_name'  => 'mg_desc2',
                     'value'       => '',
