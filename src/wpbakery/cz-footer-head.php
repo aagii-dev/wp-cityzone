@@ -53,15 +53,15 @@ if (!class_exists('vc_FooterText') && class_exists('WPBakeryShortCode')) {
 
             // HTML бүтээж буцаана
             ob_start(); ?>
-            <div class="footer-head">
-                <div class="row">
-                    <div class="col-12 col-md-10 col-lg-7">
-                    <div class="d-flex flex-row align-items-center justify-content-between">
-                        <div class="text">
-                        <?php echo $mg_text; ?>
+            <div class="row">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="footer-head">
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                            <div class="text">
+                            <?php echo $mg_text; ?>
+                            </div>
+                            <a href="<?php echo $mg_link; ?>" ><span><?php echo $mg_link_text; ?></span></a>
                         </div>
-                        <a href="<?php echo $mg_link; ?>" ><span><?php echo $mg_link_text; ?></span></a>
-                    </div>
                     </div>
                 </div>
             </div>
