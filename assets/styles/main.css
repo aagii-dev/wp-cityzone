@@ -943,10 +943,9 @@ footer {
 }
 .footer-head {
   background: #eee;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
   /* padding: 0 200px; */
 }
 .footer-head .text {
