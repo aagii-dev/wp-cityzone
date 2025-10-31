@@ -33,7 +33,7 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                     'value'       => '',
                 ],
 
-                // ---------- Текст блок ----------
+                // ---------- Текст блокwp ----------
                 [
                     'type'        => 'textarea',
                     'heading'     => __('Paragraph #1', 'text-domain'),
@@ -154,8 +154,8 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                 <div class="about-left mt-5">
                 <div class="mb-5">
                     
-                    <?php if (!empty($mg_desc1)) echo "<p class='desc mb-5 mt-0'>$mg_desc1</p>"; ?>
-                    <?php if (!empty($mg_desc2)) echo "<p class='zone-brand mb-5 mt-0 mt-md-5'>$mg_desc2</p>"; ?>
+                    <?php if (!empty($mg_desc1)) echo "<p class='desc mb-5 mt-0'>" . yld_clean_textarea($mg_desc1) . "</p>"; ?>
+                    <?php if (!empty($mg_desc2)) echo "<p class='zone-brand mb-5 mt-0 mt-md-5'>" . yld_clean_textarea($mg_desc2) . "</p>"; ?>
                       
 
                     <a href="#_" class="about-btn" id="openModalBtn">
