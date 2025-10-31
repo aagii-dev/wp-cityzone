@@ -103,8 +103,8 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                 new Swiper(".progress-swiper", {
                   slidesPerView: "auto",
                   spaceBetween: 30,
-                  loop: true,
-                  loopPreventsSliding: false,
+                  // loop: true,
+                  // loopPreventsSliding: false,
                   // freeMode: true,
                   mousewheel: { forceToAxis: true },
                   keyboard: { enabled: true },

@@ -20,7 +20,10 @@ if (!function_exists('wild_setup')) {
         add_image_size('hero_thumb', 1920, 1080, true);
         add_image_size('hero_blurry', 19, 10, true);
         add_image_size('size11_thumb', 1000, 1000, true);
-        add_image_size('size11_blurry', 10, 10, true);
+        add_image_size('size11_thumb', 1000, 1000, true);
+
+        add_image_size('gallery_thumb', 900, 300, true);
+        add_image_size('gallery_blurry', 90, 30, true);
         
 
 

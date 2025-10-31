@@ -106,7 +106,7 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
 
             <div class="d-flex gap-4 flex-row align-items-start justify-content-between">
                 <!-- LEFT: үндсэн табууд -->
-                <ul class="nav flex-lg-column nav-pills roomTabs gap-3" id="roomTabs" role="tablist">
+                <ul class="nav app-room flex-lg-column nav-pills roomTabs gap-3" id="roomTabs" role="tablist">
                     <?php foreach ($mg_rooms as $key=>$val) {  ?>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php echo $key==0?'active':''; ?>" id="r<?php echo $key; ?>-tab" data-bs-toggle="pill" data-bs-target="#r<?php echo $key; ?>" type="button" role="tab"><?php echo $val['mg_room_name'];?></button>

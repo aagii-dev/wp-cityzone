@@ -54,7 +54,8 @@ if (!class_exists('vc_Gallery') && class_exists('WPBakeryShortCode')) {
                 if (!$id) continue;
 
                 $images[] = [
-                  'url'      => wp_get_attachment_image_url($id, 'large'),
+                  'url'      => wp_get_attachment_image_url($id, 'gallery_thumb'),
+                  'url_full'      => wp_get_attachment_image_url($id, 'full'),
                   'title'    => get_the_title($id), // media title
                   'caption'  => wp_get_attachment_caption($id), // media caption
                   'alt'      => get_post_meta($id, '_wp_attachment_image_alt', true),
@@ -78,8 +79,12 @@ if (!class_exists('vc_Gallery') && class_exists('WPBakeryShortCode')) {
                       if($count==1 || $count===0){
                         $bigCls="big";
                       }?>
-                      <a data-lg-size="1600-1067" class="gallery-item <?php echo $bigCls; ?>" data-src="<?php echo esc_url($img['url']); ?>" data-sub-html="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>">
-                        <img alt="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>" class="img-responsive" src="<?php echo esc_url($img['url']); ?>" />
+                      <a data-lg-size="1600-1067" class="gallery-item <?php echo $bigCls; ?>" data-src="<?php echo esc_url($img['url']); ?>" 
+                     
+                      >
+                       <!-- data-sub-html="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>" -->
+                        <!-- <img alt="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>" class="img-responsive" src="<?php echo esc_url($img['url']); ?>" /> -->
+                        <img alt="" class="img-responsive" src="<?php echo esc_url($img['url']); ?>" />
                       </a>
                       
                     <?php endforeach; ?>

@@ -448,10 +448,10 @@ body.modal-open {
 .modal-content {
   background: #fff;
   padding: 30px;
-  width: 90%;
-  max-width: 600px;
-  max-height: 80vh;
-  border-radius: 20px !important;
+  /* width: 90%; */
+  /* max-width: 600px; */
+  /* max-height: 80vh; */
+  border-radius: 0px !important;
   overflow-y: auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 
@@ -613,7 +613,7 @@ body.modal-open {
   content: "NEW";
   position: absolute;
   top: 50%;
-  margin-top: -9px;
+  margin-top: 0px;
   left: 8%;
   transform: translate(-8%, -50%);
   font-family: "GillSansWeb", sans-serif;
@@ -1351,8 +1351,8 @@ footer {
   color: #000;
 }
 
-.col-left .desc ,
-.col-left .desc p{
+.col-left .desc,
+.col-left .desc p {
   font-size: clamp(18px, 1.5vw, 24px);
   font-weight: 500;
   line-height: 1.4;
@@ -1386,7 +1386,7 @@ footer {
   padding: 16px 0;
   border-bottom: 1px solid #ececec;
 }
-.specs .spec:last-child{
+.specs .spec:last-child {
   border: none;
 }
 .specs .no-border {
@@ -1412,13 +1412,12 @@ footer {
   /* grid-template-columns: repeat(2, 1fr); */
   gap: 40px;
   flex-wrap: wrap;
-
 }
-.grid-3 .grid-3{
-   flex: 0 0 calc((100% - 40px) / 3);  /* (нийт - 1 gap) / 2 */
+.grid-3 .grid-3 {
+  flex: 0 0 calc((100% - 40px) / 3); /* (нийт - 1 gap) / 2 */
 }
 .stat-card {
-  flex: 0 0 calc((100% - 40px) / 2);  /* (нийт - 1 gap) / 2 */
+  flex: 0 0 calc((100% - 40px) / 2); /* (нийт - 1 gap) / 2 */
   padding: 20px;
   position: relative;
   display: flex;
@@ -1883,6 +1882,14 @@ input::placeholder {
     /* margin-top: var(--topbar-h); */
     /* padding-top: var(--topbar-h); */
   }
+  .app-room {
+    display: block;
+  }
+  .app-room .nav-link {
+    white-space: nowrap;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+  }
   footer {
     margin-left: 0;
   }
@@ -1967,7 +1974,7 @@ input::placeholder {
     letter-spacing: 2px;
     width: 100vw;
     z-index: 3;
-    padding-left: 24px;
+    padding-left: 30px;
   }
   .stack-label::before {
     content: "NEW";
@@ -1982,7 +1989,7 @@ input::placeholder {
   }
 
   .stack-desc {
-    width: 100vw;
+    width: 100%;
     padding: 0 24px;
   }
 
@@ -2024,7 +2031,7 @@ input::placeholder {
   }
 
   .specs .spec {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .col-left {
     max-width: 100%;
@@ -2056,6 +2063,11 @@ input::placeholder {
   }
 }
 
+@media (max-width: 767.98px) {
+  .map-pins .loc {
+    margin-left: 0;
+  }
+}
 /* iOS notch-тай үед арай илүү зай авахыг хүсвэл: */
 @supports (padding: max(0px)) {
   @media (max-width: 991.98px) {

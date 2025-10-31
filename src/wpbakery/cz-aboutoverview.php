@@ -166,25 +166,27 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                     </a>
 
                     <!-- Modal -->
-                    <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <!-- <span class="close">&times;</span> -->
-                         <?php if(!empty($modal_image)){?>
-                                <img src="<?php echo $modal_image; ?>" alt="" />
-                         <?php } ?>
-                    
-                        <div class="desc mb-3 mt-0 w-100">
-                        <?php echo $mg_modal_title; ?>
+                    <div id="myModal123" class="modal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <!-- <span class="close">&times;</span> -->
+                                <?php if(!empty($modal_image)){?>
+                                        <img src="<?php echo $modal_image; ?>" alt="" />
+                                <?php } ?>
+                            
+                                <div class="desc mb-3 mt-0 w-100">
+                                <?php echo $mg_modal_title; ?>
+                                </div>
+                                <div class='zone-brand mb-5  w-100'>
+                                    <?php echo wpautop($mg_modal_text); ?>
+                                </div>
+                            </div>
                         </div>
-                        <div class='zone-brand mb-5  w-100'>
-                            <?php echo wpautop($mg_modal_text); ?>
-                        </div>
-                    </div>
                     </div>
                 </div>
 
                 <script>
-                    const modal = document.getElementById("myModal")
+                    const modal = document.getElementById("myModal123")
                     const btn = document.getElementById("openModalBtn")
                     const closeBtn = document.querySelector(".close") // Хэрэв close span-аа буцааж ашиглавал
 

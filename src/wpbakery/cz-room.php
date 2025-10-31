@@ -161,7 +161,7 @@ if (!class_exists('vc_Room') && class_exists('WPBakeryShortCode')) {
                     </div>
 
                     <div class="room-bottom flex-column flex-md-row">
-                      <div class="room-caption">-</div>
+                      <div class="room-caption"></div>
                       <div class="room-nav">
                         <button class="nav-btn prev" aria-label="Өмнөх">←</button>
                         <button class="nav-btn next" aria-label="Дараах">→</button>
@@ -266,7 +266,7 @@ if (!class_exists('vc_Room') && class_exists('WPBakeryShortCode')) {
                     })
 
                     function onUpdate(sw, capEl, bottomEl, root) {
-                      setCaption(sw, capEl)
+                      // setCaption(sw, capEl)
                       syncBottomWidth(sw, bottomEl, root)
                     }
 
