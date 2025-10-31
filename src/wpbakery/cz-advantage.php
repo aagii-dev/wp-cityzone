@@ -111,7 +111,7 @@ if (!class_exists('vc_Advantage') && class_exists('WPBakeryShortCode')) {
                                 <div class="advantage-text">
                                     <h3 class="advantage-title mb-5"><?php echo $mg_title; ?></h3>
                                     <div class='d-flex flex-column gap-3'>
-                                        <p class="excerpt"><?php echo wpautop($mg_text); ?></p>
+                                        <p class="excerpt"><?php echo yld_clean_textarea($mg_text); ?></p>
                                         <?php if (!empty($checklist)) : ?>
                                             <ul class="excerpt">
                                                 <?php foreach ($checklist as $item) : ?>

@@ -35,13 +35,13 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
 
                 // ---------- Текст блокwp ----------
                 [
-                    'type'        => 'textarea',
+                    'type'        => 'textarea_raw_html',
                     'heading'     => __('Paragraph #1', 'text-domain'),
                     'param_name'  => 'mg_desc1',
                     'value'       => '',
                 ],
                 [
-                    'type'        => 'textarea',
+                    'type'        => 'textarea_raw_html',
                     'heading'     => __('Paragraph #2', 'text-domain'),
                     'param_name'  => 'mg_desc2',
                     'value'       => '',
@@ -175,10 +175,10 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                                 <?php } ?>
                             
                                 <div class="desc mb-3 mt-0 w-100">
-                                <?php echo $mg_modal_title; ?>
+                                <?php echo yld_clean_textarea($mg_modal_title); ?>
                                 </div>
                                 <div class='zone-brand mb-5  w-100'>
-                                    <?php echo wpautop($mg_modal_text); ?>
+                                    <?php echo yld_clean_textarea($mg_modal_text); ?>
                                 </div>
                             </div>
                         </div>

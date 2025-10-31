@@ -67,7 +67,7 @@ if (!class_exists('vc_Projects') && class_exists('WPBakeryShortCode')) {
             <section class="project section-wrapper">
                 <div class="divider"></div>
                 <p class="title"><?php echo $mg_title; ?></p>
-                <div class="row g-4 mt-5">
+                <div class="row g-4 mt-3 mt-lg-5">
                      <?php foreach ($mg_list as $val) { ?>
                         <?php
                         $mg_image = $val['mg_image'] ? wp_get_attachment_image_url($val['mg_image'], 'large') : '';

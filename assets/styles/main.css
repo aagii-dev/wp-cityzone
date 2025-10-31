@@ -396,6 +396,9 @@ body.menu-open {
   font-weight: 200;
   line-height: 1.2;
 }
+.desc span{
+  color: #FF6633;
+}
 
 /* Зүүн талын текст/стат */
 .about-overview h5 {

@@ -112,10 +112,10 @@ if (!class_exists('vc_About') && class_exists('WPBakeryShortCode')) {
                         <div class="col-12 col-md-6">
                             <div class="col-left">
                             <div class="desc">
-                                <?php echo wpautop($mg_text1); ?>
+                                <?php echo yld_clean_textarea($mg_text1); ?>
                             </div>
                             <p>
-                                <?php echo wpautop($mg_text2); ?>
+                                <?php echo yld_clean_textarea($mg_text2); ?>
                             </p>
                             <?php if(!empty($mg_more)) : ?>
                                 <a href="<?php echo $mg_more; ?>" class="about-btn">
