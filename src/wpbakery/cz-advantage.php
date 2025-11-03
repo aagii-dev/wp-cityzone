@@ -105,25 +105,29 @@ if (!class_exists('vc_Advantage') && class_exists('WPBakeryShortCode')) {
                          <div class="advantage-item">
                             <div class="row gy-5">
                             <div class="col-12 col-md-7">
-                                <div class="d-flex flex-row gap-4 gap-3 gap-lg-3">
-                                <div class="advantage-icon">
-                                    <img src="<?php echo $mg_icon_url; ?>" alt="" style="max-width: 24px;max-height: 24px;">
-                                </div>
-                                <div class="advantage-text">
-                                    <h3 class="advantage-title mb-5"><?php echo $mg_title; ?></h3>
-                                    <div class='d-flex flex-column gap-3'>
-                                        <p class="excerpt"><?php echo yld_clean_textarea($mg_text); ?></p>
-                                        <?php if (!empty($checklist)) : ?>
-                                            <ul class="excerpt">
-                                                <?php foreach ($checklist as $item) : ?>
-                                                <li>
-                                                    <?php echo esc_html($item); ?>
-                                                </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        <?php endif; ?>
+                                <div class="d-flex flex-column gap-4 gap-3 gap-lg-3">
+                                    <div class="d-flex align-items-center gap-4  mb-4" style="max-width: 80%">
+                                        <div class="advantage-icon">
+                                            <img src="<?php echo $mg_icon_url; ?>" alt="" style="max-width: 24px;max-height: 24px;">
+                                        </div>
+                                        <h3 class="advantage-title"><?php echo $mg_title; ?></h3>
                                     </div>
-                                </div>
+                                
+                                    <div class="advantage-text ">
+                                       
+                                        <div class='d-flex flex-column gap-3'>
+                                            <div class="excerpt"><?php echo yld_clean_textarea($mg_text); ?></div>
+                                            <?php if (!empty($checklist)) : ?>
+                                                <ul class="excerpt">
+                                                    <?php foreach ($checklist as $item) : ?>
+                                                    <li>
+                                                        <?php echo esc_html($item); ?>
+                                                    </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-5">
