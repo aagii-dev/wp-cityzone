@@ -93,7 +93,8 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                 </div>
 
                 <div class="progress-bottom">
-                  <span class="count" id="imgCount"><?php echo $mg_list ? sizeof($mg_list): "0"; ?> зураг</span>
+                  <div class=''></div>
+                  <!-- <span class="count" id="imgCount"><?php echo $mg_list ? sizeof($mg_list): "0"; ?> зураг</span> -->
                   <div class="nav">
                     <button class="nav-btn prev" aria-label="Өмнөх">←</button>
                     <button class="nav-btn next" aria-label="Дараах">→</button>
