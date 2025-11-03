@@ -137,13 +137,7 @@ if (!class_exists('vc_About') && class_exists('WPBakeryShortCode')) {
                                 </a>
                             <?php endif; ?>
                         
-                            </div>
-                        </div>
-
-                        <!-- Баруун тал -->
-                        <div class="col-12 col-md-6">
-                            <div class="col-right">
-                                <!-- Specs -->
+                              <!-- Specs -->
                                 <dl class="specs">
                                     <?php foreach ($mg_specs as $val){ ?>
                                         <div class="spec">
@@ -152,6 +146,13 @@ if (!class_exists('vc_About') && class_exists('WPBakeryShortCode')) {
                                         </div>
                                     <?php } ?>
                                 </dl>
+                            </div>
+                        </div>
+
+                        <!-- Баруун тал -->
+                        <div class="col-12 col-md-6">
+                            <div class="col-right">
+                              
 
                                 <!-- Статистик картууд -->
                                 <div class="stats">
