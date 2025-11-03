@@ -1427,9 +1427,11 @@ footer {
   font-size: 16px;
   font-weight: 500;
 }
+.spec dt:first-child,
 .specs dt:first-child {
   font-size: 13px;
   color: var(--orange);
+  line-height: 1.8;
   text-transform: uppercase;
 }
 .specs dd {
