@@ -158,7 +158,8 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                     <?php if (!empty($mg_desc2)) echo "<p class='zone-brand mb-5 mt-0 mt-md-5'>" . yld_clean_textarea($mg_desc2) . "</p>"; ?>
                       
 
-                    <a href="#_" class="about-btn" id="openModalBtn">
+                    <!-- <a href="#_" class="about-btn" id="openModalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
+                    <a href="#_" class="about-btn"  data-bs-toggle="modal" data-bs-target="#mwad125">
                         <div><?php echo $mg_btn_label; ?></div>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M3.33398 10H16.6673M16.6673 10L11.6673 5M16.6673 10L11.6673 15" stroke="#FF6633" stroke-linecap="round" stroke-linejoin="round" />
@@ -166,7 +167,7 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                     </a>
 
                     <!-- Modal -->
-                    <div id="myModal123" class="modal">
+                    <div id="mwad125" class="modal fade fade-up" tabindex="-1">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <!-- <span class="close">&times;</span> -->
@@ -186,32 +187,34 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                 </div>
 
                 <script>
-                    const modal = document.getElementById("myModal123")
-                    const btn = document.getElementById("openModalBtn")
-                    const closeBtn = document.querySelector(".close") // Хэрэв close span-аа буцааж ашиглавал
+                    // const modal = document.getElementById("myModal123")
+                    // const btn = document.getElementById("openModalBtn")
+                    // const closeBtn = document.querySelector(".close") // Хэрэв close span-аа буцааж ашиглавал
 
-                    function openModal(e) {
-                    if (e) e.preventDefault()
-                    modal.style.display = "grid"
-                    document.body.classList.add("modal-open")
-                    }
+                    // function openModal(e) {
+                    // if (e) e.preventDefault()
+                    //     modal.style.display = "grid"
+                    //     // document.body.classList.add("modal-open")
+                    //     modal.classList.add("show")
+                    // }
 
-                    function closeModal() {
-                    modal.style.display = "none"
-                    document.body.classList.remove("modal-open")
-                    }
+                    // function closeModal() {
+                    //     modal.style.display = "none"
+                    //     // document.body.classList.remove("modal-open")
+                    //     modal.classList.remove("show")
+                    // }
 
-                    btn.addEventListener("click", openModal)
+                    // btn.addEventListener("click", openModal)
 
-                    // overlay дээр дарвал хаах
-                    modal.addEventListener("click", (e) => {
-                    if (e.target === modal) closeModal()
-                    })
+                    // // overlay дээр дарвал хаах
+                    // modal.addEventListener("click", (e) => {
+                    // if (e.target === modal) closeModal()
+                    // })
 
-                    // Escape дарвал хаах
-                    window.addEventListener("keydown", (e) => {
-                    if (e.key === "Escape" && modal.style.display !== "none") closeModal()
-                    })
+                    // // Escape дарвал хаах
+                    // window.addEventListener("keydown", (e) => {
+                    // if (e.key === "Escape" && modal.style.display !== "none") closeModal()
+                    // })
                 </script>
 
 

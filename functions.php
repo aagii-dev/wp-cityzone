@@ -246,14 +246,26 @@ function calculate_percentage($count, $total) {
 
 
 // functions.php
+// function yld_clean_textarea($s) {
+//   $s = wp_unslash($s);
+//   $s = htmlspecialchars_decode($s, ENT_QUOTES);
+//   // Фэнси ишлэл/энтити → энгийн тэмдэгт
+//   $s = str_replace(
+//     ['&quot;', '&#34;', '``', "''", '“', '”', '&ldquo;', '&rdquo;', '‘', '’', '&lsquo;', '&rsquo;'],
+//     ['"',      '"',     '"',  '"',  '"', '"',  '"',       '"',       "'",  "'",  "'",       "'"],
+//     $s
+//   );
+//   return wp_kses_post($s); // зөвшөөрөгдсөн HTML-ээ үлдээнэ
+// }
 function yld_clean_textarea($s) {
   $s = wp_unslash($s);
   $s = htmlspecialchars_decode($s, ENT_QUOTES);
-  // Фэнси ишлэл/энтити → энгийн тэмдэгт
   $s = str_replace(
     ['&quot;', '&#34;', '``', "''", '“', '”', '&ldquo;', '&rdquo;', '‘', '’', '&lsquo;', '&rsquo;'],
-    ['"',      '"',     '"',  '"',  '"', '"',  '"',       '"',       "'",  "'",  "'",       "'"],
+    ['"', '"', '"', '"', '"', '"', '"', '"', "'", "'", "'", "'"],
     $s
   );
-  return wp_kses_post($s); // зөвшөөрөгдсөн HTML-ээ үлдээнэ
+  $s = wp_kses_post($s); // зөвшөөрөгдсөн HTML үлдээе
+  $s = wpautop($s); // newline → <p> / <br>
+  return $s;
 }
