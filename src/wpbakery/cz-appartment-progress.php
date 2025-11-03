@@ -80,11 +80,10 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                               <div class="frame">
                                 <img 
                                 class="blurry-load"
-                                        blur-type="img" data-large="<?php echo esc_url($mg_image); ?>"
+                                        blur-type="img" data-large="<?php echo esc_url($mg_image_url); ?>"
                                         src="<?php echo esc_url($mg_image_blurry); ?>"
                                         alt="" 
-                                        
-                                        src="<?php echo $mg_image_url; ?>" alt="<?php echo $val['mg_date']; ?>" loading="lazy" />
+                                         />
                               </div>
                               <figcaption class="caption"><?php echo $val['mg_date']; ?></figcaption>
                             </figure>
