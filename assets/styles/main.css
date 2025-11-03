@@ -1430,10 +1430,9 @@ footer {
 }
 .spec dt:first-child,
 .specs dt:first-child {
-  font-size: 13px;
-  color: var(--orange);
-  line-height: 1.8;
-  text-transform: uppercase;
+  font-size: 16px;
+  color: #6f6f6f;
+  font-weight: 500;
 }
 .specs dd {
   font-size: 16px;
@@ -1445,7 +1444,7 @@ footer {
 .stats {
   list-style: none;
   padding: 0;
-  margin: 18px 0 0;
+  /* margin: 18px 0 0; */
   display: flex;
   /* grid-template-columns: repeat(2, 1fr); */
   gap: 40px;

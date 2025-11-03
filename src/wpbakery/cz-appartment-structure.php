@@ -118,7 +118,7 @@ if (!class_exists('vc_AppartmentStructure') && class_exists('WPBakeryShortCode')
                          <!-- Specs -->
                         <ul class="nav subtabs border-bottom mb-3" >
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link  active" >C-загвар</button>
+                                <button class="nav-link  active" >Мэдээлэл</button>
                             </li>
                         </ul>
                         <dl class="specs">
