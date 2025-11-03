@@ -12,7 +12,7 @@
 	<!-- google fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 	
 	<!-- fav -->
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/favicon/apple-icon-57x57.png">
@@ -102,22 +102,24 @@ $bodyCls = "";
 				<div class="col-12 col-lg-4">
 					<div class="menu-side mb-5">
 					<div>
-						<p class="cap">СОШИАЛ ХАЯГ</p>
-						<?php if($facebook_url):?>
-							<a href='<?php echo $facebook_url; ?>' target='_blank'>Фэйсбүүк</a><br />
-						<?php endif; ?>
-						<?php if($instagram_url):?>
-							<a href='<?php echo $instagram_url; ?>' target='_blank'>Инстаграм</a><br />
-						<?php endif; ?>
-					<div>
-						<p class="cap">ХОЛБОО БАРИХ</p>
-						<a href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a><br />
-						<a href="tel:<?php echo $contact_phone; ?>"><?php echo $contact_phone; ?></a>
+						<div class='mb-4'>
+							<p class="cap">СОШИАЛ ХАЯГ</p>
+							<?php if($facebook_url):?>
+								<a href='<?php echo $facebook_url; ?>' target='_blank'>Фэйсбүүк</a><br />
+							<?php endif; ?>
+							<?php if($instagram_url):?>
+								<a href='<?php echo $instagram_url; ?>' target='_blank'>Инстаграм</a><br />
+							<?php endif; ?>
+						</div>
+						<div>
+							<p class="cap">ХОЛБОО БАРИХ</p>
+							<a href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a><br />
+							<a href="tel:<?php echo $contact_phone; ?>"><?php echo $contact_phone; ?></a>
+						</div>
 					</div>
-					</div>
-					<a target="_blank" href="https://yld.mn">
+					<!-- <a target="_blank" href="https://yld.mn">
 					<span class="powered">Developed by <b>YLD</b></span>
-					</a>
+					</a> -->
 				</div>
 				</div>
 			</div>

@@ -207,7 +207,8 @@ body.menu-open .menu-btn span:nth-child(3) {
 .menu {
   position: fixed;
   inset: 0 0 0 var(--sidebar-w);
-  background: #fff;
+  background: #ffffffe6;
+  backdrop-filter: blur(10px);
   z-index: 30;
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -233,9 +234,13 @@ body.menu-open {
   font-weight: 400;
   letter-spacing: 3px;
   font-size: 48px;
+  text-decoration: none;
+  transition: transform 0.3s ease-in;
 }
 .menu-links a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  color: var(--orange);
+  transform: translateX(15px);
 }
 
 .menu-side {
@@ -253,7 +258,7 @@ body.menu-open {
 .menu-side a {
   color: #222;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 .menu-side a:hover {
   text-decoration: underline;
@@ -385,7 +390,8 @@ body.menu-open {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  font-size: clamp(18px, 1.5vw, 24px);
+  /* font-size: clamp(18px, 1.5vw, 24px); */
+  font-size: clamp(13px, 1.5vw, 16px);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -565,8 +571,8 @@ body.modal-open {
   position: absolute;
   inset: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
 
   pointer-events: none;
   z-index: 1;

@@ -227,7 +227,7 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
 
                                 <div class="stat">
                                     <div class="stat-number"><?php echo $val['stat_number']; ?></div>
-                                    <p class="mb-0 flex-shrink-0 text-nowrap"><?php echo $val['stat_label']; ?></p>
+                                    <p class="mb-0 flex-shrink-0 text-nowrap caption"><?php echo $val['stat_label']; ?></p>
                                 </div>
                             </div>
                         </div>
