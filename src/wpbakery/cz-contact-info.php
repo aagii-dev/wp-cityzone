@@ -89,7 +89,6 @@ if (!class_exists('vc_ContactInfo') && class_exists('WPBakeryShortCode')) {
                     <p>
                       <?php echo $address; ?>
                     </p>
-                    <p>Утас: <?php echo $contact_phone; ?></p>
                   </div>
                 </div>
               </div>
