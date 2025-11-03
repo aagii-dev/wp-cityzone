@@ -112,16 +112,10 @@ if (!class_exists('vc_AppartmentStructure') && class_exists('WPBakeryShortCode')
                         <div class="desc">
                             <?php echo yld_clean_textarea($mg_text1); ?>
                         </div>
-                        <p>
+                        <div>
                             <?php echo yld_clean_textarea($mg_text2); ?>
-                        </p>
-                    </div>
-                    </div>
-
-                    <!-- Баруун тал -->
-                    <div class="col-12 col-md-6">
-                    <div class="col-right">
-                        <!-- Specs -->
+                        </div>
+                         <!-- Specs -->
                         <dl class="specs">
                             <?php foreach ($mg_specs as $val){ ?>
                                 <div class="spec">
@@ -130,6 +124,13 @@ if (!class_exists('vc_AppartmentStructure') && class_exists('WPBakeryShortCode')
                                 </div>
                             <?php } ?>
                         </dl>
+                    </div>
+                    </div>
+
+                    <!-- Баруун тал -->
+                    <div class="col-12 col-md-6">
+                    <div class="col-right">
+                       
                         <!-- Статистик картууд -->
                         <div class="stats grid-3">
                             <?php foreach ($mg_stats as $val){ ?>
