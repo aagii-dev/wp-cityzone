@@ -59,7 +59,7 @@
 
 
 
-// <?php
+<?php
 // // 1) Хайлтын AJAX endpoint (нийтэд нээлттэй)
 // add_action('wp_ajax_hc_global_search', 'hc_global_search');
 // add_action('wp_ajax_nopriv_hc_global_search', 'hc_global_search');
