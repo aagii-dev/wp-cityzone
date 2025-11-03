@@ -21,6 +21,7 @@ if (isset($polylang)) {
         array('description' => 'Нүүр', 'keyboard' => 'home'),
         array('description' => 'Нэвтрэх', 'keyboard' => 'login'),
         array('description' => 'Илгээх', 'keyboard' => 'send'),
+        array('description' => 'Мэдээлэл', 'keyboard' => 'news_tab'),
         
     );
     //Declare and set language strings to Global variables

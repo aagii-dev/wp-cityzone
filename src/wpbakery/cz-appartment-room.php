@@ -125,6 +125,16 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                     
                             ?>
                             <div class="tab-pane fade <?php echo $key==0?'show active':''; ?>" id="r<?php echo $key; ?>" role="tabpanel" aria-labelledby="r<?php echo $key; ?>tab">
+                                <ul class="nav subtabs border-bottom mb-3" id="r<?php echo $key; ?>-variants" role="tablist">
+                                    <?php foreach($mg_zagwar as $zkey=>$zval){ ?>
+                                        <?php
+                                        $mg_image_url = wp_get_attachment_image_url($zval['mg_image'], 'full');
+                                        ?>
+                                        <li class="nav-item">
+                                            <button class="nav-link zagwar-link <?php echo $zkey==0?'active':''; ?>" data-image="<?php echo $mg_image_url;?>" data-bs-toggle="tab" data-bs-target="#r<?php echo $key; ?>-<?php echo $zkey; ?>" type="button"><?php echo $zval['mg_name']?></button>
+                                        </li>
+                                    <?php } ?>
+                                </ul>    
                                 <div class="row g-3">
                                     <div class="col-lg-8">
                                         <?php if(!empty($mg_zagwar)){ 
@@ -134,16 +144,7 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                                        
                                     </div>
                                     <div class="col-lg-4">
-                                        <ul class="nav subtabs border-bottom mb-3" id="r<?php echo $key; ?>-variants" role="tablist">
-                                            <?php foreach($mg_zagwar as $zkey=>$zval){ ?>
-                                                <?php
-                                                $mg_image_url = wp_get_attachment_image_url($zval['mg_image'], 'full');
-                                                ?>
-                                                <li class="nav-item">
-                                                    <button class="nav-link zagwar-link <?php echo $zkey==0?'active':''; ?>" data-image="<?php echo $mg_image_url;?>" data-bs-toggle="tab" data-bs-target="#r<?php echo $key; ?>-<?php echo $zkey; ?>" type="button"><?php echo $zval['mg_name']?></button>
-                                                </li>
-                                            <?php } ?>
-                                        </ul>
+                                      
 
                                         <div class="tab-content">
                                             <?php foreach($mg_zagwar as $zkey=>$zval){ ?>
