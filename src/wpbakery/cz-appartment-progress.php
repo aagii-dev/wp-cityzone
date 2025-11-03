@@ -73,11 +73,18 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                     <?php foreach ($mg_list as $val){ ?>
                         <?php
                         $mg_image_url = $val['mg_image'] ? wp_get_attachment_image_url($val['mg_image'], 'full') : '';
+                        $mg_image_url_blurry = $val['mg_image'] ? wp_get_attachment_image_url($val['mg_image'], 'large_blurry') : '';
                         ?>
                           <div class="swiper-slide">
                             <figure class="progress-card">
                               <div class="frame">
-                                <img src="<?php echo $mg_image_url; ?>" alt="<?php echo $val['mg_date']; ?>" loading="lazy" />
+                                <img 
+                                class="blurry-load"
+                                        blur-type="img" data-large="<?php echo esc_url($mg_image); ?>"
+                                        src="<?php echo esc_url($mg_image_blurry); ?>"
+                                        alt="" 
+                                        
+                                        src="<?php echo $mg_image_url; ?>" alt="<?php echo $val['mg_date']; ?>" loading="lazy" />
                               </div>
                               <figcaption class="caption"><?php echo $val['mg_date']; ?></figcaption>
                             </figure>

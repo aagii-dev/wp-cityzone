@@ -115,6 +115,7 @@ if (!class_exists('vc_Room') && class_exists('WPBakeryShortCode')) {
 
                       $images[] = [
                         'url'      => wp_get_attachment_image_url($id, 'large'),
+                        'full'      => wp_get_attachment_image_url($id, 'full'),
                         'title'    => get_the_title($id), // media title
                         'caption'  => wp_get_attachment_caption($id), // media caption
                         'alt'      => get_post_meta($id, '_wp_attachment_image_alt', true),
@@ -147,7 +148,7 @@ if (!class_exists('vc_Room') && class_exists('WPBakeryShortCode')) {
                             <?php foreach ($images as $img) : ?>
                               <div class="swiper-slide" data-caption="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>">
                                 <div class="slide-inner">
-                                  <a class='gallery-item' data-src="<?php echo esc_url($img['url']); ?>">
+                                  <a class='gallery-item' data-src="<?php echo esc_url($img['full']); ?>">
                                     <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>" />
                                   </a>
                                 </div>

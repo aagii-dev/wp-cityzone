@@ -71,11 +71,16 @@ if (!class_exists('vc_Projects') && class_exists('WPBakeryShortCode')) {
                      <?php foreach ($mg_list as $val) { ?>
                         <?php
                         $mg_image = $val['mg_image'] ? wp_get_attachment_image_url($val['mg_image'], 'large') : '';
+                        $mg_image_blurry = $val['mg_image'] ? wp_get_attachment_image_url($val['mg_image'], 'large_blurry') : '';
                         ?>
                          <div class="col-12 col-md-6">
                             <a href='<?php echo $val['mg_url']; ?>' class="project-card">
                                 <div class="project-media">
-                                    <img src="<?php echo $mg_image; ?>" alt="p-01" />
+                                    <img 
+                                        class="blurry-load"
+                                        blur-type="img" data-large="<?php echo esc_url($mg_image); ?>"
+                                        src="<?php echo esc_url($mg_image_blurry); ?>"
+                                        alt="" />
                                 </div>
                                 <div
                                     class="project-info flex-column flex-md-row align-items-start align-md-center"

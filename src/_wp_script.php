@@ -21,8 +21,8 @@ function add_theme_scripts()
     // wp_enqueue_script('aos', get_template_directory_uri() . '/assets/plugins/aos/v2.3.1/aos.js');
 
     // blurry
-    // wp_enqueue_style('blurry', get_template_directory_uri() . '/assets/plugins/blurry/blurry-load.css');
-    // wp_enqueue_script('blurry', get_template_directory_uri() . '/assets/plugins/blurry/blurry-load.js', '', '', true);
+    wp_enqueue_style('blurry', get_template_directory_uri() . '/assets/plugins/blurry/blurry-load.css');
+    wp_enqueue_script('blurry', get_template_directory_uri() . '/assets/plugins/blurry/blurry-load.js', '', '', true);
 
     // bootstrap
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/plugins/bootstrap/v5.3.3/css/bootstrap.min.css');

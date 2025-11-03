@@ -88,6 +88,7 @@ if (!class_exists('vc_Advantage') && class_exists('WPBakeryShortCode')) {
                         $mg_checklist = $val['mg_checklist'];    
                         $mg_icon_url = $mg_icon ? wp_get_attachment_image_url($mg_icon, 'full') : '';
                         $mg_image_url = $mg_image ? wp_get_attachment_image_url($mg_image, 'large') : '';
+                        $mg_image_url_blurry = $mg_image ? wp_get_attachment_image_url($mg_image, 'large_blurry') : '';
                         
                         $checklist = [];
                         if ($mg_checklist) {
@@ -127,7 +128,11 @@ if (!class_exists('vc_Advantage') && class_exists('WPBakeryShortCode')) {
                             </div>
                             <div class="col-12 col-md-5">
                                 <div class="advantage-content">
-                                    <img src="<?php echo $mg_image_url; ?>" alt="" loading="lazy" decoding="async">
+                                    <img 
+                                        class="blurry-load"
+                                        blur-type="img" data-large="<?php echo esc_url($mg_image_url); ?>"
+                                        src="<?php echo esc_url($mg_image_url_blurry); ?>"
+                                    >
                                 </div>
                             </div>
                             </div>

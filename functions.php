@@ -24,6 +24,7 @@ if (!function_exists('wild_setup')) {
 
         add_image_size('gallery_thumb', 900, 300, true);
         add_image_size('gallery_blurry', 90, 30, true);
+        add_image_size('large_blurry', 90);
         
 
 

@@ -47,6 +47,7 @@ if (!class_exists('vc_Hero') && class_exists('WPBakeryShortCode')) {
             // Зургийн URL (attach_image -> ID)
             $bg_id  = intval($mg_background);
             $bg_url = $bg_id ? wp_get_attachment_image_url($bg_id, 'hero_thumb') : '';
+            $bg_blurry = $bg_id ? wp_get_attachment_image_url($bg_id, 'hero_blurry') : '';
 
             // Title / Content sanitize
             $title   = sanitize_text_field($atts['mg_title']);
@@ -56,7 +57,11 @@ if (!class_exists('vc_Hero') && class_exists('WPBakeryShortCode')) {
             ob_start(); ?>
             <section class="page-hero hero" data-zoom="both">
                 <?php if ($bg_url): ?>
-                <img src="<?php echo esc_url($bg_url); ?>" alt="<?php echo esc_attr($title ?: 'hero'); ?>" />
+                <img 
+                class="blurry-load"
+                blur-type="img" data-large="<?php echo esc_url($bg_url); ?>"
+                src="<?php echo esc_url($bg_blurry); ?>"
+                alt="<?php echo esc_attr($title ?: 'hero'); ?>" />
                 <?php endif; ?>
 
                 <?php if (!empty($title)): ?>
