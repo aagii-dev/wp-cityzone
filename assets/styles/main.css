@@ -848,10 +848,10 @@ body.modal-open {
   cursor: pointer;
 }
 
-.gallery-item {
+.scale-effect {
   transition: transform 0.35s ease;
 }
-.gallery-item:hover {
+.scale-effect:hover {
   transform: scale(1.05);
 }
 

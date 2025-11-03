@@ -148,7 +148,7 @@ if (!class_exists('vc_Room') && class_exists('WPBakeryShortCode')) {
                             <?php foreach ($images as $img) : ?>
                               <div class="swiper-slide" data-caption="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>">
                                 <div class="slide-inner">
-                                  <a class='gallery-item' data-src="<?php echo esc_url($img['full']); ?>">
+                                  <a class='gallery-item scale-effect' data-src="<?php echo esc_url($img['full']); ?>">
                                     <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>" />
                                   </a>
                                 </div>
