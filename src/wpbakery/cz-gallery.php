@@ -79,7 +79,7 @@ if (!class_exists('vc_Gallery') && class_exists('WPBakeryShortCode')) {
                       if($count==1 || $count===0){
                         $bigCls="big";
                       }?>
-                      <a data-lg-size="1600-1067" class="gallery-item  overflow-hidden <?php echo $bigCls; ?>" data-src="<?php echo esc_url($img['url']); ?>" 
+                      <a data-lg-size="1600-1067" class="gallery-item  overflow-hidden <?php echo $bigCls; ?>" data-src="<?php echo esc_url($img['url_full']); ?>" 
                      
                       >
                        <!-- data-sub-html="<?php echo esc_attr($img['alt'] ?: $img['title']); ?>" -->
