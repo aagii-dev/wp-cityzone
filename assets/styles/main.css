@@ -1427,6 +1427,11 @@ footer {
   font-size: 16px;
   font-weight: 500;
 }
+.specs dt:first-child {
+  font-size: 13px;
+  color: var(--orange);
+  text-transform: uppercase;
+}
 .specs dd {
   font-size: 16px;
   color: #000;
