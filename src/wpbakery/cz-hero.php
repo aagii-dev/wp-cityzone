@@ -65,8 +65,8 @@ if (!class_exists('vc_Hero') && class_exists('WPBakeryShortCode')) {
             <section class="page-hero hero" data-zoom="both">
                 <?php if ($bg_url): ?>
                 <img 
-                class="blurry-load"
-                blur-type="img hero-bg-<?php echo $mg_style; ?>" data-large="<?php echo esc_url($bg_url); ?>"
+                class="blurry-load hero-bg-<?php echo $mg_style; ?>"
+                blur-type="img " data-large="<?php echo esc_url($bg_url); ?>"
                 src="<?php echo esc_url($bg_blurry); ?>"
                 alt="<?php echo esc_attr($title ?: 'hero'); ?>" />
                 <?php endif; ?>
