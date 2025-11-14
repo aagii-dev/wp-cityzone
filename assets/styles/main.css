@@ -1856,6 +1856,7 @@ input::placeholder {
 .gallery-item.big {
   grid-column: span 2; /* 2 багана дамжина */
   grid-row: span 2; /* 2 мөр дамжина */
+  height: 100%;
 }
 
 .gallery-item {
@@ -1864,7 +1865,7 @@ input::placeholder {
   overflow: hidden;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: 160px;
 }
 
 .gallery-item::after {
