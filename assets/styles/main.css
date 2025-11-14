@@ -672,7 +672,7 @@ body.modal-open {
   z-index: 3;
 }
 .stack-item-section {
-  min-height: 130vh;
+  min-height: 160vh;
 }
 
 .stack-desc {
