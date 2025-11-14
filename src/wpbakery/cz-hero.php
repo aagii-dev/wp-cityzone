@@ -32,6 +32,12 @@ if (!class_exists('vc_Hero') && class_exists('WPBakeryShortCode')) {
                         'param_name' => 'mg_title',
                         'admin_label' => true,
                     ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => 'Background style (ex: cover or contain)',
+                        'param_name' => 'mg_style',
+                        'admin_label' => true,
+                    ),
 				),
 			]);
 		}
@@ -41,6 +47,7 @@ if (!class_exists('vc_Hero') && class_exists('WPBakeryShortCode')) {
 			extract(shortcode_atts([
 				'mg_background' => '',
 				'mg_title' => '',
+				'mg_style' => '',
 			], $atts));
 
 
@@ -59,7 +66,7 @@ if (!class_exists('vc_Hero') && class_exists('WPBakeryShortCode')) {
                 <?php if ($bg_url): ?>
                 <img 
                 class="blurry-load"
-                blur-type="img" data-large="<?php echo esc_url($bg_url); ?>"
+                blur-type="img hero-bg-<?php echo $mg_style; ?>" data-large="<?php echo esc_url($bg_url); ?>"
                 src="<?php echo esc_url($bg_blurry); ?>"
                 alt="<?php echo esc_attr($title ?: 'hero'); ?>" />
                 <?php endif; ?>

@@ -17,7 +17,7 @@ if (!function_exists('wild_setup')) {
         update_option('thumbnail_size_h', 240);
 
 
-        add_image_size('hero_thumb', 1920, 1080, true);
+        add_image_size('hero_thumb', 1920);
         add_image_size('hero_blurry', 19, 10, true);
         add_image_size('size11_thumb', 1000, 1000, true);
         add_image_size('size11_thumb', 1000, 1000, true);

@@ -78,15 +78,19 @@ if (!class_exists('vc_Stack') && class_exists('WPBakeryShortCode')) {
                         <?php
                         $stack_background = $val['stack_background'] ? wp_get_attachment_image_url($val['stack_background'], 'full') : '';
                         ?>
-                        <div class="stack-item flex-column flex-lg-row" data-bg="<?php echo $stack_background; ?>">
-                            <p class="stack-label"><?php echo $val['stack_label']; ?></p>
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/star.svg" alt="star" class="stack-star d-none d-lg-flex" />
-                            <div class="stack-desc">
-                            <p>
-                            <?php echo $val['stack_title']; ?>
-                            </p>
-                            <p class="desc">
-                            <?php echo $val['stack_text']; ?></p>
+                        <div class="stack-item-section" >
+                            <div class="stack-item d-flex align-items-center justify-content-center sticky-top" data-bg="<?php echo $stack_background; ?>">
+                                <div class="d-flex align-items-center justify-content-center flex-column flex-lg-row ">
+                                    <p class="stack-label"><?php echo $val['stack_label']; ?></p>
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/star.svg" alt="star" class="stack-star d-none d-lg-flex" />
+                                    <div class="stack-desc">
+                                    <p>
+                                    <?php echo $val['stack_title']; ?>
+                                    </p>
+                                    <p class="desc">
+                                    <?php echo $val['stack_text']; ?></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php } ?>

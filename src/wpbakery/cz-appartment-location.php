@@ -269,22 +269,35 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
               var lat = parseFloat(a.getAttribute('data-lat'));
               var lon = parseFloat(a.getAttribute('data-lon'));
               var name= a.getAttribute('data-name') || '';
-              var cat = a.getAttribute('data-cat') || 'blue';
+              var cat = a.getAttribute('data-cat') || 'green';
               var num = a.getAttribute('data-idx') || (idx+1);
 
               if (isNaN(lat) || isNaN(lon)) return;
               var pos = {lat: lat, lng: lon};
 
+              // --- PIN ICON УУСГЭХ ---
+              // num → 2 оронтой формат
+              var num2 = String(num).padStart(2, "0");
+
+              // icon path
+              var iconUrl = `<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/pin-${cat}-${num2}.png`;
+
               var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
                 title: name,
-                zIndex: 1
+                zIndex: 1,
+                icon: {
+                  url: iconUrl,
+                  scaledSize: new google.maps.Size(40, 40) // хүсвэл өөрчилж болно
+                }
               });
 
-              // Simple infowindow
+              // --- INFOWINDOW ---
               var iw = new google.maps.InfoWindow({
-                content: '<div style="min-width:160px"><strong>'+ (name ? name.replace(/</g,'&lt;'):'') +'</strong><br></div>'
+                content: '<div style="min-width:160px"><strong>'+ 
+                          (name ? name.replace(/</g,'&lt;'):'') + 
+                        '</strong><br></div>'
               });
 
               marker.addListener('click', function(){
@@ -295,9 +308,7 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
                 e.preventDefault();
                 map.panTo(pos);
                 map.setZoom(16);
-                // emphasize marker
                 google.maps.event.trigger(marker, 'click');
-                // active class
                 links.forEach(function(x){ x.classList.remove('is-active'); });
                 a.classList.add('is-active');
               });
