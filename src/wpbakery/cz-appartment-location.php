@@ -125,7 +125,9 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
       $uid = uniqid('czmap_');
 
       // Pin-үүдийн дараалал/дугаар
-      $count = 0;
+      $count1 = 0;
+      $count2 = 0;
+      $count3 = 0;
 
       ob_start(); ?>
       <section class="map section-wrapper">
@@ -150,15 +152,15 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
                   $lat  = isset($val['mg_lat']) ? floatval($val['mg_lat']) : null;
                   $lon  = isset($val['mg_lon']) ? floatval($val['mg_lon']) : null;
                   if ($name === '' || $lat === null || $lon === null) continue;
-                  $count++; ?>
+                  $count1++; ?>
                   <a href="#"
                     class="loc green"
                     data-lat="<?php echo esc_attr($lat); ?>"
                     data-lon="<?php echo esc_attr($lon); ?>"
                     data-name="<?php echo esc_attr($name); ?>"
                     data-cat="green"
-                    data-idx="<?php echo esc_attr($count); ?>">
-                    <span><?php echo sprintf('%02d', $count); ?></span><?php echo esc_html($name); ?>
+                    data-idx="<?php echo esc_attr($count1); ?>">
+                    <span><?php echo sprintf('%02d', $count1); ?></span><?php echo esc_html($name); ?>
                   </a>
                 <?php endforeach; ?>
               <?php endif; ?>
@@ -170,15 +172,15 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
                   $lat  = isset($val['mg_lat']) ? floatval($val['mg_lat']) : null;
                   $lon  = isset($val['mg_lon']) ? floatval($val['mg_lon']) : null;
                   if ($name === '' || $lat === null || $lon === null) continue;
-                  $count++; ?>
+                  $count2++; ?>
                   <a href="#"
                     class="loc red"
                     data-lat="<?php echo esc_attr($lat); ?>"
                     data-lon="<?php echo esc_attr($lon); ?>"
                     data-name="<?php echo esc_attr($name); ?>"
                     data-cat="red"
-                    data-idx="<?php echo esc_attr($count); ?>">
-                    <span><?php echo sprintf('%02d', $count); ?></span><?php echo esc_html($name); ?>
+                    data-idx="<?php echo esc_attr($count2); ?>">
+                    <span><?php echo sprintf('%02d', $count2); ?></span><?php echo esc_html($name); ?>
                   </a>
                 <?php endforeach; ?>
               <?php endif; ?>
@@ -190,15 +192,15 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
                   $lat  = isset($val['mg_lat']) ? floatval($val['mg_lat']) : null;
                   $lon  = isset($val['mg_lon']) ? floatval($val['mg_lon']) : null;
                   if ($name === '' || $lat === null || $lon === null) continue;
-                  $count++; ?>
+                  $count3++; ?>
                   <a href="#"
                     class="loc blue"
                     data-lat="<?php echo esc_attr($lat); ?>"
                     data-lon="<?php echo esc_attr($lon); ?>"
                     data-name="<?php echo esc_attr($name); ?>"
                     data-cat="blue"
-                    data-idx="<?php echo esc_attr($count); ?>">
-                    <span><?php echo sprintf('%02d', $count); ?></span><?php echo esc_html($name); ?>
+                    data-idx="<?php echo esc_attr($count3); ?>">
+                    <span><?php echo sprintf('%02d', $count3); ?></span><?php echo esc_html($name); ?>
                   </a>
                 <?php endforeach; ?>
               <?php endif; ?>
@@ -234,13 +236,12 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
             if (!mapEl) return;
 
             var map = new google.maps.Map(mapEl, {
-              center: {lat: 47.917, lng: 106.917}, // default UB-ish center
-              zoom: 12,
+              center: {lat: 47.8709141, lng: 106.8379464}, // default UB-ish center
+              zoom: 14,
               mapTypeControl: false,
               streetViewControl: false,
               fullscreenControl: true,
             });
-
             // SVG marker color per category
             function markerIcon(color){
               return {
@@ -286,7 +287,7 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
                 position: pos,
                 map: map,
                 title: name,
-                zIndex: 1,
+                // zIndex: 1,
                 icon: {
                   url: iconUrl,
                   scaledSize: new google.maps.Size(40, 40) // хүсвэл өөрчилж болно
@@ -316,6 +317,24 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
               markers.push(marker);
               bounds.extend(pos);
             });
+
+
+            var mainMarker = new google.maps.Marker({
+              position: {
+                lat: 47.8709141,
+                lng: 106.8379464
+              },
+              map: map,
+              title: "CityZone",
+              zIndex: 2,
+              icon: {
+                url: `<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/pin-cityzone.png`,
+                scaledSize: new google.maps.Size(40, 40) // хүсвэл өөрчилж болно
+              }
+            });
+
+            // 🔹 mainMarker-ийг bounds дотор нэмнэ
+            bounds.extend(mainPos);
 
             if (!bounds.isEmpty()) {
               map.fitBounds(bounds);
