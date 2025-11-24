@@ -158,32 +158,34 @@ if (!class_exists('vc_AboutOverview') && class_exists('WPBakeryShortCode')) {
                     <?php if (!empty($mg_desc2)) echo "<div class='zone-brand mb-5 mt-0 mt-md-5'>" . yld_clean_textarea($mg_desc2) . "</div>"; ?>
                       
 
-                    <!-- <a href="#_" class="about-btn" id="openModalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
-                    <a href="#_" class="about-btn"  data-bs-toggle="modal" data-bs-target="#mwad125">
-                        <div><?php echo $mg_btn_label; ?></div>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3.33398 10H16.6673M16.6673 10L11.6673 5M16.6673 10L11.6673 15" stroke="#FF6633" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
+                    <?php if(!empty($mg_btn_label)):?>
+                        <!-- <a href="#_" class="about-btn" id="openModalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
+                        <a href="#_" class="about-btn"  data-bs-toggle="modal" data-bs-target="#mwad125">
+                            <div><?php echo $mg_btn_label; ?></div>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3.33398 10H16.6673M16.6673 10L11.6673 5M16.6673 10L11.6673 15" stroke="#FF6633" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
 
-                    <!-- Modal -->
-                    <div id="mwad125" class="modal fade fade-up" tabindex="-1">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <!-- <span class="close">&times;</span> -->
-                                <?php if(!empty($modal_image)){?>
-                                        <img src="<?php echo $modal_image; ?>" alt="" />
-                                <?php } ?>
-                            
-                                <div class="desc mb-3 mt-0 w-100">
-                                <?php echo yld_clean_textarea($mg_modal_title); ?>
-                                </div>
-                                <div class='zone-brand mb-5  w-100'>
-                                    <?php echo yld_clean_textarea($mg_modal_text); ?>
+                        <!-- Modal -->
+                        <div id="mwad125" class="modal fade fade-up" tabindex="-1">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <!-- <span class="close">&times;</span> -->
+                                    <?php if(!empty($modal_image)){?>
+                                            <img src="<?php echo $modal_image; ?>" alt="" />
+                                    <?php } ?>
+                                
+                                    <div class="desc mb-3 mt-0 w-100">
+                                    <?php echo yld_clean_textarea($mg_modal_title); ?>
+                                    </div>
+                                    <div class='zone-brand mb-5  w-100'>
+                                        <?php echo yld_clean_textarea($mg_modal_text); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
 
                 <script>

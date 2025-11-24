@@ -96,7 +96,7 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
                   <?php if(!empty($mg_event_box_location)): ?>
                     <div class="col-sm-6 mb-4">
                       <div class='event-box'>
-                        <h5 class="text-uppercase mb-4">📍 Байршил</h5>
+                        <h5 class="mb-4">Байршил</h5>
                         <?php echo $mg_event_box_location; ?>
                       </div>
                     </div>
@@ -104,7 +104,7 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
                   <?php if(!empty($mg_event_box_day) || !empty($mg_event_box_time)): ?>
                     <div class="col-sm-6 mb-4">
                       <div class='event-box'>
-                        <h5 class="text-uppercase mb-4">📅 Огноо</h5>
+                        <h5 class="mb-4">Огноо</h5>
                         <?php echo "<div><b>$mg_event_box_day</b></div>"; ?>
                         <?php echo "$mg_event_box_time"; ?>
                       </div>
