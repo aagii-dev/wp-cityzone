@@ -192,7 +192,6 @@ body.menu-open .menu-btn span:nth-child(3) {
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  margin-bottom: 0 !important;
 }
 
 .divider {
@@ -1230,6 +1229,7 @@ footer {
 }
 .progress-swiper .swiper-slide {
   width: auto;
+  overflow: hidden;
 } /* slidesPerView:'auto' тай холбоотой */
 
 /* Доорх сар/он */
@@ -1933,6 +1933,11 @@ input::placeholder {
     min-height: 100vh;
   }
   .page-hero .hero-bg-contain {
+    object-fit: cover;
+  }
+  .progress-card img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 }
