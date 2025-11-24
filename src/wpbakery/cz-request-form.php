@@ -32,6 +32,33 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
                         'param_name' => 'mg_form',
                         'admin_label' => true,
                     ),
+
+
+
+                    array(
+                        'type' => 'textarea',
+                        'heading' => 'Event Text',
+                        'param_name' => 'mg_event_box_text',
+                        'admin_label' => true,
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => 'Event Location',
+                        'param_name' => 'mg_event_box_location',
+                        'admin_label' => true,
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => 'Event Date (day)',
+                        'param_name' => 'mg_event_box_day',
+                        'admin_label' => true,
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => 'Event Date (time)',
+                        'param_name' => 'mg_event_box_time',
+                        'admin_label' => true,
+                    ),
 				),
 			]);
 		}
@@ -41,6 +68,11 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
 			extract(shortcode_atts([
 				'mg_title' => '',
 				'mg_form' => '',
+				'mg_event_box_text' => '',
+				'mg_event_box_location' => '',
+				'mg_event_box_day' => '',
+				'mg_event_box_time' => '',
+
 			], $atts));
 
 
@@ -56,6 +88,28 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
               <p class="title"><?php echo $mg_title; ?></p>
             </div>
             <div class="col-12 col-lg-6">
+              <?php if(!empty($mg_event_box_text)): ?>
+                <div class="mb-4"><?php echo $mg_event_box_text; ?></div>
+              <?php endif;?>
+              <div class="row">
+                <?php if(!empty($mg_event_box_location)): ?>
+                  <div class="col-sm-6 mb-4">
+                    <div class='event-box'>
+                      <h5 class="text-uppercase mb-4">📍 Байршил</h5>
+                      <?php echo $mg_event_box_location; ?>
+                    </div>
+                  </div>
+                <?php endif;?>
+                <?php if(!empty($mg_event_box_day) || !empty($mg_event_box_time)): ?>
+                  <div class="col-sm-6 mb-4">
+                    <div class='event-box'>
+                      <h5 class="text-uppercase mb-4">📅 Огноо</h5>
+                      <?php echo "<div><b>$mg_event_box_day</b></div>"; ?>
+                      <?php echo "$mg_event_box_time"; ?>
+                    </div>
+                  </div>
+                <?php endif;?>
+              </div>
               <?php 
               $contact_form = cmb2_get_option('yld_options', 'contact_form_' . pll_current_language('slug'));
               echo do_shortcode($contact_form);
