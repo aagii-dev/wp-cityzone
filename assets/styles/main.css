@@ -1929,6 +1929,12 @@ input::placeholder {
     grid-column: span 1;
     grid-row: span 1;
   }
+  .stack-item-section {
+    min-height: 100vh;
+  }
+  .page-hero .hero-bg-contain {
+    object-fit: cover;
+  }
 }
 
 /* ------------------------------------------ ------ ------------------------------------------ */
