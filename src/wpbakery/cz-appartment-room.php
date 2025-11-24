@@ -95,6 +95,7 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
 
             $mg_rooms = vc_param_group_parse_atts($atts['mg_rooms']);
             
+            $rand = rand(1000, 9999);
             // HTML бүтээж буцаана
             ob_start(); ?>
            <section class="section-wrapper">
@@ -139,7 +140,7 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                                     <div class="col-lg-8">
                                         <?php if(!empty($mg_zagwar)){ 
                                              $mg_first_image_url = wp_get_attachment_image_url($mg_zagwar[0]['mg_image'], 'full'); ?>
-                                             <img class="w-100" src="<?php echo $mg_first_image_url; ?>" id='zagwar-img' alt="" />
+                                             <img class="w-100" src="<?php echo $mg_first_image_url; ?>" id='zagwar-img<?php echo $rand; ?>' alt="" />
                                         <?php } ?>
                                        
                                     </div>
@@ -177,25 +178,25 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
             </div>
         </section>
         <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Бүх загварын линкүүдийг сонгоно
-  const zagwarLinks = document.querySelectorAll('.zagwar-link');
-  const mainImage = document.getElementById('zagwar-img');
+            document.addEventListener('DOMContentLoaded', function() {
+                // Бүх загварын линкүүдийг сонгоно
+                const zagwarLinks = document.querySelectorAll('.zagwar-link');
+                const mainImage = document.getElementById('zagwar-img<?php echo $rand; ?>');
 
-  zagwarLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      const imageUrl = this.getAttribute('data-image');
-      if (imageUrl && mainImage) {
-        mainImage.setAttribute('src', imageUrl);
-      }
+                zagwarLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                    const imageUrl = this.getAttribute('data-image');
+                    if (imageUrl && mainImage) {
+                        mainImage.setAttribute('src', imageUrl);
+                    }
 
-      // active class солих
-      zagwarLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-});
-</script>
+                    // active class солих
+                    zagwarLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    });
+                });
+            });
+        </script>
             <?php
             return ob_get_clean();
     
