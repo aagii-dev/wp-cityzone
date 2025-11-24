@@ -139,11 +139,11 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                             
                                       
 
-                                <div class="tab-content">
                                     <?php foreach($mg_zagwar as $zkey=>$zval){ ?>
                                         <?php 
                                         $mg_specs = vc_param_group_parse_atts($zval['mg_specs']); 
                                         ?>
+                                <div class="tab-content">
                                         <div class="row g-3">
                                             <div class="col-lg-8">
                                                 <?php if(!empty($mg_zagwar)){ 
@@ -168,8 +168,8 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php } ?>
                                 </div>
+                                    <?php } ?>
                             </div>
                         <?php } ?>
 
