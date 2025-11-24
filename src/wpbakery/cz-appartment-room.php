@@ -136,38 +136,40 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                                         </li>
                                     <?php } ?>
                                 </ul>    
-                              
-                                 
-                                        <div class="tab-content">
-                                            <?php foreach($mg_zagwar as $zkey=>$zval){ ?>
-                                                <?php 
-                                                $mg_specs = vc_param_group_parse_atts($zval['mg_specs']); 
-                                                ?>        
-                                                <div class="row g-3">
-                                                    <div class="col-lg-8">
-                                                        <?php 
-                                                        $mg_first_image_url = wp_get_attachment_image_url($zval['mg_image'], 'full');
-                                                        ?>
-                                                        <img class="w-100" src="<?php echo $mg_first_image_url; ?>" id='zagwar-img<?php echo $rand; ?>' alt="" />
-                                                           
-                                                    </div>
-                                                    <!-- r3-E -->
-                                                    <div class="tab-pane fade <?php echo $zkey==0?'show active':''; ?>" id="r<?php echo $key; ?>-<?php echo $zkey; ?>">
-                                                        <table class="table specs-table">
-                                                            <tbody>
-                                                                <?php foreach($mg_specs as $sval){ ?>
-                                                                    <tr>
-                                                                        <th><?php echo $sval['mg_spec_name'];?></th>
-                                                                        <td><?php echo $sval['mg_spec_value'];?></td>
-                                                                    </tr>
-                                                                <?php } ?>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                            <?php } ?>
+                            
+                                      
 
+                                <div class="tab-content">
+                                    <?php foreach($mg_zagwar as $zkey=>$zval){ ?>
+                                        <?php 
+                                        $mg_specs = vc_param_group_parse_atts($zval['mg_specs']); 
+                                        ?>
+                                        <div class="row g-3">
+                                            <div class="col-lg-8">
+                                                <?php if(!empty($mg_zagwar)){ 
+                                                    $mg_first_image_url = wp_get_attachment_image_url($zval['mg_image'], 'full'); ?>
+                                                    <img class="w-100" src="<?php echo $mg_first_image_url; ?>" id='zagwar-img<?php echo $zkey; ?>' alt="" />
+                                                <?php } ?>
+                                            
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <!-- r3-E -->
+                                                <div class="tab-pane fade <?php echo $zkey==0?'show active':''; ?>" id="r<?php echo $key; ?>-<?php echo $zkey; ?>">
+                                                    <table class="table specs-table">
+                                                        <tbody>
+                                                            <?php foreach($mg_specs as $sval){ ?>
+                                                                <tr>
+                                                                    <th><?php echo $sval['mg_spec_name'];?></th>
+                                                                    <td><?php echo $sval['mg_spec_value'];?></td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
-                              
+                                    <?php } ?>
+                                </div>
                             </div>
                         <?php } ?>
 
