@@ -91,25 +91,27 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
               <?php if(!empty($mg_event_box_text)): ?>
                 <div class="mb-4"><?php echo $mg_event_box_text; ?></div>
               <?php endif;?>
-              <div class="row">
-                <?php if(!empty($mg_event_box_location)): ?>
-                  <div class="col-sm-6 mb-4">
-                    <div class='event-box'>
-                      <h5 class="text-uppercase mb-4">📍 Байршил</h5>
-                      <?php echo $mg_event_box_location; ?>
+              <?php if(!empty($mg_event_box_location)): ?>
+                <div class="row mb-5">
+                  <?php if(!empty($mg_event_box_location)): ?>
+                    <div class="col-sm-6 mb-4">
+                      <div class='event-box'>
+                        <h5 class="text-uppercase mb-4">📍 Байршил</h5>
+                        <?php echo $mg_event_box_location; ?>
+                      </div>
                     </div>
-                  </div>
-                <?php endif;?>
-                <?php if(!empty($mg_event_box_day) || !empty($mg_event_box_time)): ?>
-                  <div class="col-sm-6 mb-4">
-                    <div class='event-box'>
-                      <h5 class="text-uppercase mb-4">📅 Огноо</h5>
-                      <?php echo "<div><b>$mg_event_box_day</b></div>"; ?>
-                      <?php echo "$mg_event_box_time"; ?>
+                  <?php endif;?>
+                  <?php if(!empty($mg_event_box_day) || !empty($mg_event_box_time)): ?>
+                    <div class="col-sm-6 mb-4">
+                      <div class='event-box'>
+                        <h5 class="text-uppercase mb-4">📅 Огноо</h5>
+                        <?php echo "<div><b>$mg_event_box_day</b></div>"; ?>
+                        <?php echo "$mg_event_box_time"; ?>
+                      </div>
                     </div>
-                  </div>
-                <?php endif;?>
-              </div>
+                  <?php endif;?>
+                </div>
+              <?php endif;?>
               <?php 
               $contact_form = cmb2_get_option('yld_options', 'contact_form_' . pll_current_language('slug'));
               echo do_shortcode($contact_form);
