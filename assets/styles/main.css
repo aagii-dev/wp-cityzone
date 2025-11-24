@@ -1688,6 +1688,7 @@ input::placeholder {
 
 /* Button */
 .send-btn {
+  display: block;
   width: 100%;
   padding: 10px 14px;
   border: 1px solid #000;
