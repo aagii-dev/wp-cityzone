@@ -106,7 +106,7 @@ if (!class_exists('vc_Advantage') && class_exists('WPBakeryShortCode')) {
                             <div class="row gy-5">
                             <div class="col-12 col-md-7">
                                 <div class="d-flex flex-column gap-4 gap-3 gap-lg-3">
-                                    <div class="d-flex align-items-center gap-4  mb-4" style="max-width: 80%">
+                                    <div class="d-sm-flex align-items-center gap-4  mb-sm-4" style="max-width: 80%">
                                         <div class="advantage-icon">
                                             <img src="<?php echo $mg_icon_url; ?>" alt="" style="max-width: 24px;max-height: 24px;">
                                         </div>

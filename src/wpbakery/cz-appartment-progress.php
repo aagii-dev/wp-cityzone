@@ -130,9 +130,18 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                     },
                   },
                   breakpoints: {
-                    0: { spaceBetween: 16 },
-                    768: { spaceBetween: 24 },
-                    1200: { spaceBetween: 30 },
+                    0: { 
+                      slidesPerView: 1,
+                      spaceBetween: 16
+                     },
+                    768: { 
+                      slidesPerView: "auto",
+                      spaceBetween: 24
+                     },
+                    1200: { 
+                      slidesPerView: "auto",
+                      spaceBetween: 30 
+                    },
                   },
                 })
               </script>
