@@ -236,7 +236,7 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
             if (!mapEl) return;
 
             var map = new google.maps.Map(mapEl, {
-              center: {lat: 47.8709141, lng: 106.8379464}, // default UB-ish center
+              center: {lat: 47.8726919, lng: 106.8450813}, // default UB-ish center
               zoom: 14,
               mapTypeControl: false,
               streetViewControl: false,
@@ -321,8 +321,7 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
 
             var mainMarker = new google.maps.Marker({
               position: {
-                lat: 47.8709141,
-                lng: 106.8379464
+                lat: 47.8726919, lng: 106.8450813
               },
               map: map,
               title: "CityZone",
