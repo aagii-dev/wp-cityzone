@@ -95,7 +95,7 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
 
             $mg_rooms = vc_param_group_parse_atts($atts['mg_rooms']);
             
-            $rand = rand(1000, 9999);
+       
             // HTML бүтээж буцаана
             ob_start(); ?>
            <section class="section-wrapper">
@@ -123,7 +123,7 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                         <?php foreach ($mg_rooms as $key=>$val) {  ?>
                             <?php
                             $mg_zagwar = vc_param_group_parse_atts($val['mg_zagwar']);
-                    
+                            $rand = rand(1000, 9999);
                             ?>
                             <div class="tab-pane fade <?php echo $key==0?'show active':''; ?>" id="r<?php echo $key; ?>" role="tabpanel" aria-labelledby="r<?php echo $key; ?>tab">
                                 <ul class="nav subtabs border-bottom mb-3" id="r<?php echo $key; ?>-variants" role="tablist">
@@ -136,40 +136,38 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
                                         </li>
                                     <?php } ?>
                                 </ul>    
-                                <div class="row g-3">
-                                    <div class="col-lg-8">
-                                        <?php if(!empty($mg_zagwar)){ 
-                                             $mg_first_image_url = wp_get_attachment_image_url($mg_zagwar[0]['mg_image'], 'full'); ?>
-                                             <img class="w-100" src="<?php echo $mg_first_image_url; ?>" id='zagwar-img<?php echo $rand; ?>' alt="" />
-                                        <?php } ?>
-                                       
-                                    </div>
-                                    <div class="col-lg-4">
-                                      
-
+                              
+                                 
                                         <div class="tab-content">
                                             <?php foreach($mg_zagwar as $zkey=>$zval){ ?>
                                                 <?php 
                                                 $mg_specs = vc_param_group_parse_atts($zval['mg_specs']); 
-                                                ?>
-                                            <!-- r3-E -->
-                                            <div class="tab-pane fade <?php echo $zkey==0?'show active':''; ?>" id="r<?php echo $key; ?>-<?php echo $zkey; ?>">
-                                                <table class="table specs-table">
-                                                    <tbody>
-                                                        <?php foreach($mg_specs as $sval){ ?>
-                                                            <tr>
-                                                                <th><?php echo $sval['mg_spec_name'];?></th>
-                                                                <td><?php echo $sval['mg_spec_value'];?></td>
-                                                            </tr>
-                                                        <?php } ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                ?>        
+                                                <div class="row g-3">
+                                                    <div class="col-lg-8">
+                                                        <?php 
+                                                        $mg_first_image_url = wp_get_attachment_image_url($zval['mg_image'], 'full');
+                                                        ?>
+                                                        <img class="w-100" src="<?php echo $mg_first_image_url; ?>" id='zagwar-img<?php echo $rand; ?>' alt="" />
+                                                           
+                                                    </div>
+                                                    <!-- r3-E -->
+                                                    <div class="tab-pane fade <?php echo $zkey==0?'show active':''; ?>" id="r<?php echo $key; ?>-<?php echo $zkey; ?>">
+                                                        <table class="table specs-table">
+                                                            <tbody>
+                                                                <?php foreach($mg_specs as $sval){ ?>
+                                                                    <tr>
+                                                                        <th><?php echo $sval['mg_spec_name'];?></th>
+                                                                        <td><?php echo $sval['mg_spec_value'];?></td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                             <?php } ?>
 
                                         </div>
-                                    </div>
-                                </div>
+                              
                             </div>
                         <?php } ?>
 
@@ -181,14 +179,14 @@ if (!class_exists('vc_AppartmentRoom') && class_exists('WPBakeryShortCode')) {
             document.addEventListener('DOMContentLoaded', function() {
                 // Бүх загварын линкүүдийг сонгоно
                 const zagwarLinks = document.querySelectorAll('.zagwar-link');
-                const mainImage = document.getElementById('zagwar-img<?php echo $rand; ?>');
+                // const mainImage = document.getElementById('zagwar-img<?php echo $rand; ?>');
 
                 zagwarLinks.forEach(link => {
                     link.addEventListener('click', function() {
-                    const imageUrl = this.getAttribute('data-image');
-                    if (imageUrl && mainImage) {
-                        mainImage.setAttribute('src', imageUrl);
-                    }
+                    // const imageUrl = this.getAttribute('data-image');
+                    // if (imageUrl && mainImage) {
+                    //     mainImage.setAttribute('src', imageUrl);
+                    // }
 
                     // active class солих
                     zagwarLinks.forEach(l => l.classList.remove('active'));
