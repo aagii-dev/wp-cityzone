@@ -140,7 +140,7 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
         <div class="row g-0">
           <div class="col-12 col-md-8">
             <div class="map-wrapper">
-              <div id="<?php echo esc_attr($uid); ?>" class="cz-google-map" style="width:100%;height:100%;"></div>
+              <div id="<?php echo esc_attr($uid); ?>" class="cz-google-map" style="width:100%;height:100%;min-height:480px;"></div>
             </div>
           </div>
           <div class="col-12 col-md-4">
