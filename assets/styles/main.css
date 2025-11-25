@@ -1305,6 +1305,7 @@ footer {
   gap: 15px;
   padding: 20px;
   overflow-y: auto;
+  max-height: 600px;
   /* min-height: 480px;
   max-height: 480px; */
 }
@@ -1948,7 +1949,7 @@ input::placeholder {
     height: 100%;
     object-fit: cover;
   }
-  .event-box{
+  .event-box {
     padding: 20px;
   }
 }
