@@ -98,7 +98,7 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
 
                 <?php if(!empty($mg_evet_box_image_url)): ?>
                 <div class="row">
-                    <div class="col-md-7 mb-4">
+                    <div class="col-lg-7 mt-4 mb-4">
                       <img src="<?php echo esc_url($mg_evet_box_image_url); ?>" alt="" class="w-100 h-auto" />  
                     </div>
                 </div>
