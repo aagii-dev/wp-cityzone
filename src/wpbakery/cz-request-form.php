@@ -42,6 +42,11 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
                         'admin_label' => true,
                     ),
                     array(
+                      'type'        => 'attach_image',
+                      'heading'     => __('Event image', 'text-domain'),
+                      'param_name'  => 'mg_evet_box_image',
+                    ),
+                    array(
                         'type' => 'textfield',
                         'heading' => 'Event Location',
                         'param_name' => 'mg_event_box_location',
@@ -72,11 +77,15 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
 				'mg_event_box_location' => '',
 				'mg_event_box_day' => '',
 				'mg_event_box_time' => '',
+				'mg_evet_box_image' => '',
 
 			], $atts));
 
 
-      
+      $mg_evet_box_image_url = $mg_evet_box_image ? wp_get_attachment_image_url(intval($mg_evet_box_image), 'full') : '';
+
+
+
             
             // HTML бүтээж буцаана
             ob_start(); ?>
@@ -90,6 +99,11 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
             <div class="col-12 col-lg-6">
               <?php if(!empty($mg_event_box_text)): ?>
                 <div class="mb-4"><?php echo $mg_event_box_text; ?></div>
+              <?php endif;?>
+              <?php if(!empty($mg_evet_box_image_url)): ?>
+                <div class="mb-4">
+                  <img src="<?php echo esc_url($mg_evet_box_image_url); ?>" alt="" class="w-100 h-auto" />  
+                </div>
               <?php endif;?>
               <?php if(!empty($mg_event_box_location)): ?>
                 <div class="row mb-5">

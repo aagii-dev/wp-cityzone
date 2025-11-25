@@ -844,6 +844,9 @@ body.modal-open {
 .room-swiper {
   overflow: visible;
 }
+.room-carousel .gallery-item img {
+  object-fit: contain !important;
+}
 
 .slide-inner {
   aspect-ratio: 16/9;
