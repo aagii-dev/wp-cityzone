@@ -95,16 +95,21 @@ if (!class_exists('vc_RequestForm') && class_exists('WPBakeryShortCode')) {
           <div class="row g-5">
             <div class="col-12 col-lg-6">
               <p class="title"><?php echo $mg_title; ?></p>
+
+                <?php if(!empty($mg_evet_box_image_url)): ?>
+                <div class="row">
+                    <div class="col-md-7 mb-4">
+                      <img src="<?php echo esc_url($mg_evet_box_image_url); ?>" alt="" class="w-100 h-auto" />  
+                    </div>
+                </div>
+                <?php endif;?>
+
             </div>
             <div class="col-12 col-lg-6">
               <?php if(!empty($mg_event_box_text)): ?>
                 <div class="mb-4"><?php echo $mg_event_box_text; ?></div>
               <?php endif;?>
-              <?php if(!empty($mg_evet_box_image_url)): ?>
-                <div class="mb-4">
-                  <img src="<?php echo esc_url($mg_evet_box_image_url); ?>" alt="" class="w-100 h-auto" />  
-                </div>
-              <?php endif;?>
+            
               <?php if(!empty($mg_event_box_location)): ?>
                 <div class="row mb-5">
                   <?php if(!empty($mg_event_box_location)): ?>
