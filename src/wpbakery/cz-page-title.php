@@ -45,6 +45,7 @@ if (!class_exists('vc_PageTitle') && class_exists('WPBakeryShortCode')) {
             ob_start(); ?>
             <section class="page-header">
                 <h1><?php echo $title; ?></h1>
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/devby_tesopro.png" class='devby' />
             </section>
             <?php
             return ob_get_clean();
