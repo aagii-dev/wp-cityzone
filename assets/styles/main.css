@@ -1111,7 +1111,7 @@ footer {
   margin-left: 5px;
 }
 
-.devby{
+.devby {
   height: 60px;
 }
 /* ------------------------------------------ APARTMENT ------------------------------------------ */
@@ -1260,6 +1260,14 @@ footer {
 .progress-bottom .count {
   color: #111;
   font-size: 16px;
+}
+
+.filter-btn {
+  border: none;
+}
+.filter-btn.active {
+  background-color: #ff6a3a;
+  color: #fff;
 }
 
 /* Нав товч */

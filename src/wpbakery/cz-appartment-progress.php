@@ -25,6 +25,12 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                   'param_name' => 'mg_title',
                   'admin_label' => true,
               ),
+               array(
+                  'type' => 'textfield',
+                  'heading' => 'Group by',
+                  'param_name' => 'mg_groupby',
+                  'admin_label' => true,
+              ),
               [
                   'type'        => 'param_group',
                   'heading'     => __('List items', 'text-domain'),
@@ -41,6 +47,12 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                           'param_name' => 'mg_date',
                           'admin_label'=> true,
                       ],
+                      [
+                          'type'       => 'textfield',
+                          'heading'    => __('Tag', 'text-domain'),
+                          'param_name' => 'mg_tag',
+                          'admin_label'=> true,
+                      ],
                   ]
               ],
 				),
@@ -51,10 +63,10 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
 		{
 			extract(shortcode_atts([
 				'mg_title' => '',
+				'mg_groupby' => '',
 				'mg_list' => '',
 			], $atts));
-
-
+            $tags = !empty($mg_groupby) ? array_map('trim', explode(',', $mg_groupby)) : [];
             $mg_list = vc_param_group_parse_atts($atts['mg_list']);
       
             
@@ -66,16 +78,28 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                 <p class="title"><?php echo $mg_title; ?></p>
                 <p class="num">04</p>
               </div>
+              
+              
+              <!-- ✅ All button үргэлж гарна -->
+              <div class="mb-4">
+                <button class="filter-btn active  btn btn-sm btn-light" data-filter="all">Бүгд</button>
+                <?php foreach ($tags as $tag) { ?>
+                  <button class="filter-btn btn btn-sm btn-light" data-filter="<?php echo esc_attr($tag); ?>">
+                    <?php echo esc_html($tag); ?>
+                  </button>
+                <?php } ?>
+              </div>
 
               <div class="progress-wrap">
                 <div class="swiper progress-swiper">
                   <div class="swiper-wrapper">
                     <?php foreach ($mg_list as $val){ ?>
                         <?php
+                        $tag = $val['mg_tag'];
                         $mg_image_url = $val['mg_image'] ? wp_get_attachment_image_url($val['mg_image'], 'full') : '';
                         $mg_image_url_blurry = $val['mg_image'] ? wp_get_attachment_image_url($val['mg_image'], 'large_blurry') : '';
                         ?>
-                          <div class="swiper-slide">
+                          <div class="swiper-slide" data-tag="<?php echo esc_attr($tag); ?>">
                             <figure class="progress-card">
                               <div class="frame">
                                 <img 
@@ -102,7 +126,40 @@ if (!class_exists('vc_AppartmentProgress') && class_exists('WPBakeryShortCode'))
                 </div>
               </div>
 
+
+
+
               <script>
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // active товч
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"))
+    btn.classList.add("active")
+
+    const filter = btn.dataset.filter
+    const slides = document.querySelectorAll(".progress-swiper .swiper-slide")
+
+    slides.forEach(slide => {
+      const tag = slide.dataset.tag
+
+      if (filter === "all" || tag === filter) {
+        slide.style.display = "block"
+      } else {
+        slide.style.display = "none"
+      }
+    })
+
+    swiper.update() // Swiper дахин шинэчилнэ
+  })
+})
+</script>
+
+
+
+
+              <script>
+                
                 const a = document.querySelectorAll(".progress-swiper .swiper-slide").length
                 const countEl = document.getElementById("imgCount")
                 if (countEl) countEl.textContent = `${a} зураг`
