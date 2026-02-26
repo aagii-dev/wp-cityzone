@@ -2195,6 +2195,12 @@ input::placeholder {
     margin-top: 13px;
     margin-bottom: 20px !important;
   }
+  .page-header{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+  }
 }
 /* iOS notch-тай үед арай илүү зай авахыг хүсвэл: */
 @supports (padding: max(0px)) {
