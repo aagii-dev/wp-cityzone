@@ -26,7 +26,7 @@
 		</section>
 
 		<div class='bg-white'>
-			<div class='news-detail-container'>
+			<div class='container'>
 				<nav class="breadcrumb" aria-label="Breadcrumb">
 					<div class="breadcrumb-container">
 						<ol class="breadcrumb-list">
@@ -48,7 +48,7 @@
 		</div>
 
 		<article class="news-detail">
-			<div class="news-detail-container">
+			<div class="container">
 				<div class="news-meta">
 					<?php if ($category_name !== '') : ?>
 						<span class="news-category <?php echo esc_attr($category_class); ?>"><?php echo esc_html($category_name); ?></span>
