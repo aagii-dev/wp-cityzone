@@ -1921,7 +1921,9 @@ input::placeholder {
 }
 
 
-
+.news{
+  background-color: #fafcfd;
+}
 .news-card {
   background: transparent;
   height: 100%;
@@ -2018,7 +2020,7 @@ input::placeholder {
 }
 
 .news-card:hover .news-card-title {
-  color: #4057be;
+  color: #f36a2e;
 }
 
 .news-card-footer {
@@ -2061,8 +2063,8 @@ input::placeholder {
 }
 
 .news-card:hover .news-card-arrow {
-  background: #36469c;
-  border-color: #36469c;
+  background: #f36a2e;
+  border-color: #f36a2e;
   transform: scale(1.1);
 }
 

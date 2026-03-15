@@ -34,7 +34,7 @@ if (!class_exists('vc_News') && class_exists('WPBakeryShortCode')) {
 			ob_start();
 			?>
 			<section class="news section-wrapper">
-				<div class="divider"></div>
+				
 
 				<div class="row">
 					<?php if ($news_query->have_posts()) : ?>
