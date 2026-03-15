@@ -1,7 +1,9 @@
 /* ============ Gill Sans ============ */
 @font-face {
   font-family: "GillSansWeb";
-  src: url("../fonts/GillSans-Light.woff2") format("woff2"), url("../fonts/GillSans-Light.woff") format("woff");
+  src:
+    url("../fonts/GillSans-Light.woff2") format("woff2"),
+    url("../fonts/GillSans-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -9,7 +11,9 @@
 
 @font-face {
   font-family: "GillSansWeb";
-  src: url("../fonts/GillSans.woff2") format("woff2"), url("../fonts/GillSans.woff") format("woff");
+  src:
+    url("../fonts/GillSans.woff2") format("woff2"),
+    url("../fonts/GillSans.woff") format("woff");
   font-weight: 400; /* Regular */
   font-style: normal;
   font-display: swap;
@@ -17,7 +21,9 @@
 
 @font-face {
   font-family: "GillSansWeb";
-  src: url("../fonts/GillSans-SemiBold.woff2") format("woff2"), url("../fonts/GillSans-SemiBold.woff") format("woff");
+  src:
+    url("../fonts/GillSans-SemiBold.woff2") format("woff2"),
+    url("../fonts/GillSans-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -25,7 +31,9 @@
 
 @font-face {
   font-family: "GillSansWeb";
-  src: url("../fonts/GillSans-Bold.woff2") format("woff2"), url("../fonts/GillSans-Bold.woff") format("woff");
+  src:
+    url("../fonts/GillSans-Bold.woff2") format("woff2"),
+    url("../fonts/GillSans-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -136,7 +144,9 @@ p {
   height: 1px;
   background: #e8eefc;
   border-radius: 3px;
-  transition: transform 0.3s ease, opacity 0.2s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
 }
 body.menu-open .menu-btn span:nth-child(1) {
   transform: translateY(12px) rotate(45deg);
@@ -456,7 +466,9 @@ body.menu-open {
 /* Fade-up custom animation */
 .modal.fade.fade-up .modal-dialog {
   transform: translateY(50px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
 }
 
 /* Ил болох үед — байрандаа очно */
@@ -853,7 +865,11 @@ body.modal-open {
   aspect-ratio: 16/9;
   border-radius: 4px;
   overflow: hidden;
-  transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease, border-color 0.2s ease;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease,
+    opacity 0.35s ease,
+    border-color 0.2s ease;
   opacity: 0.45;
   filter: grayscale(1) brightness(0.9);
   background: #f2f4f8;
@@ -886,7 +902,11 @@ body.modal-open {
   background: #f2f4f8;
   opacity: 0.45;
   filter: grayscale(1) brightness(0.9);
-  transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease, border-color 0.2s ease;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease,
+    opacity 0.35s ease,
+    border-color 0.2s ease;
 }
 .slide-inner .media img {
   width: 100%;
@@ -941,7 +961,9 @@ body.modal-open {
   font-size: 14px;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
 }
 .nav-btn:hover {
   background: #f4f6fb;
@@ -1038,7 +1060,9 @@ footer {
   inset: 0;
   background: #ff8b64;
   border-radius: 99px;
-  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.3s ease;
   will-change: transform;
   transform-origin: center;
 }
@@ -1285,7 +1309,10 @@ footer {
   background: #fff;
   color: #111;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease,
+    border-color 0.15s ease;
 }
 .nav-btn:hover {
   background: #f5f7fa;
@@ -1493,7 +1520,9 @@ footer {
   /* width: 300px; */
 
   /* gradient border зөвхөн top ба left */
-  background: linear-gradient(to right, #ff6633, transparent) top left / 100% 1px no-repeat, linear-gradient(to bottom, #ff6633, transparent) top left / 1px 100% no-repeat;
+  background:
+    linear-gradient(to right, #ff6633, transparent) top left / 100% 1px no-repeat,
+    linear-gradient(to bottom, #ff6633, transparent) top left / 1px 100% no-repeat;
 }
 
 .count {
@@ -1580,7 +1609,9 @@ footer {
   object-fit: cover;
   transform-origin: center;
   will-change: transform;
-  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.45s ease;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.45s ease;
 }
 
 .project-info {
@@ -1612,7 +1643,10 @@ footer {
   opacity: 0;
   visibility: hidden; /* зайгаа хадгална */
   transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s 0.2s;
 }
 
 .more-btn::after {
@@ -1920,8 +1954,7 @@ input::placeholder {
   transform: translateY(0);
 }
 
-
-.news{
+.news {
   background-color: #fafcfd;
 }
 .news-card {
@@ -2072,9 +2105,6 @@ input::placeholder {
   color: #fff;
   /* transform: translateX(3px); */
 }
-
-
-
 
 .news-banner {
   width: 100%;
@@ -2515,7 +2545,6 @@ input::placeholder {
   color: #4057be;
 }
 
-
 /* Responsive */
 @media (max-width: 992px) {
   .gallery {
@@ -2616,7 +2645,7 @@ input::placeholder {
   }
 
   .page-header {
-    padding: 50px;
+    padding: 50px 24px;
   }
 
   .about .desc {
@@ -2791,11 +2820,17 @@ input::placeholder {
     margin-top: 13px;
     margin-bottom: 20px !important;
   }
-  .page-header{
+  .page-header {
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .devby {
+    height: 24px;
+  }
+  .page-header h1{
+    font-size: calc(1.375rem + 0.5vw);
   }
 }
 /* iOS notch-тай үед арай илүү зай авахыг хүсвэл: */
