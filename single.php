@@ -48,7 +48,7 @@
 		</div>
 
 		<article class="news-detail">
-			<div class="container">
+			<div class="container news-container">
 				<div class="news-meta">
 					<?php if ($category_name !== '') : ?>
 						<span class="news-category <?php echo esc_attr($category_class); ?>"><?php echo esc_html($category_name); ?></span>
