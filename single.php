@@ -26,7 +26,7 @@
 		</section>
 
 		<div class='bg-white'>
-			<div class='container'>
+			<div class='container news-container'>
 				<nav class="breadcrumb" aria-label="Breadcrumb">
 					<div class="breadcrumb-container">
 						<ol class="breadcrumb-list">

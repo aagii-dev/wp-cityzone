@@ -2266,6 +2266,12 @@ input::placeholder {
   letter-spacing: -0.02em;
 }
 
+.news-container{
+  max-width: 900px;
+}
+.news-container img{
+  width: 100%;
+}
 /* Content */
 .news-content {
   font-family: "Mulish", sans-serif;
@@ -2334,8 +2340,8 @@ input::placeholder {
 }
 
 .news-content a {
-  color: #4057be;
-  text-decoration: underline;
+  color: #f36a2d;
+  text-decoration: none;
   text-underline-offset: 3px;
   transition: color 0.3s ease;
 }
