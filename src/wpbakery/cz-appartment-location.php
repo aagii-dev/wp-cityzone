@@ -220,7 +220,7 @@ if (!class_exists('vc_AppartmentLocation') && class_exists('WPBakeryShortCode'))
               else window.CZ_onMapsReadyQueue.push(cb);
             };
             var s = document.createElement('script');
-            s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcHO4FlWSnWJYfAJO7vqfV-c1ebYDEexg";
+            s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdLih5qoNYSefJVAeVrrGkrK9TxtmGzP0";
             s.async = true; s.defer = true;
             s.onload = function(){
               (window.CZ_onMapsReadyQueue||[]).forEach(function(fn){ try{ fn(); }catch(e){} });
